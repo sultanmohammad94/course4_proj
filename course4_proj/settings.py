@@ -46,6 +46,7 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'django_celery_results',
         'movies',
         'gh'
     ]
@@ -131,6 +132,8 @@ class Dev(Configuration):
         },
     }
 
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
     # Internationalization
     # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
